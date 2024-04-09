@@ -15,25 +15,25 @@
   - **Providers** - are the plugins that Terraform uses to manage those resources. Every supported service or infrastructure platform has a provider that defines which resources are available and performs API calls to manage those resources.
   - **The Terraform Registry** makes it easy to use any provider or module. To use a provider or module from this registry, just add it to your configuration; when you run `terraform init`, Terraform will automatically download everything it needs.
     
-    - Terraform State
-      - Managed by Terraform core
-      - Terraform stores the state of managed resources
-      - Provides teh mapping of resource reality to your resource desired configuration 
-      - State files also track metadata 
-      - state is stored in local terrafrom.tfstate file which should not be manually edited 
-      - when update is issued, backup will also be created. 
-      - As best practice resources managed by terraform should not be modified outside of Terraform.
+    Terraform State
+    - Managed by Terraform core
+    - Terraform stores the state of managed resources
+    - Provides teh mapping of resource reality to your resource desired configuration 
+    - State files also track metadata 
+    - state is stored in local terrafrom.tfstate file which should not be manually edited 
+    - when update is issued, backup will also be created. 
+    - As best practice resources managed by terraform should not be modified outside of Terraform.
     
     Key Points
     -  Terraform Use Declarative language 
     -  Resources use the same format no matter which provider 
-    -  `
+       ``
            resource "type" "name" {
                   parameter1 = "value"
                   parameter2 = "value"
            }
-    -  `
-    -  
+       ``
+    
 ## Prerequisites
       - Azure CLI - [install](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli). 
       - Copy Terraform in local PC and register the path in Environment variable 
@@ -46,8 +46,8 @@
           - Make sure to be on the right directory
             -  az login --tenant xxx --allow-no-subscriptions
             -  az account list -o table (verify it's enabled)
-        -  `Terraform fmt` (this command formats the tf files, incase the formating is wrong)
-        -  `Terraform init` 
+        -  Terraform fmt (this command formats the tf files, incase the formating is wrong)
+        -  Terraform init
           -  this command initialize terrafrom. By taking the workspace, it parse through them and creates initial state.
           -  if you are using plugins like Azure plugins, it automatically downloads in .terraform folder name.
         -  Terraform plan 
